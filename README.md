@@ -2,60 +2,45 @@
 
 ## Google Cloud Video Intelligence API Sample
 
-.. _Google Cloud Video Intelligence API: https://cloud.google.com/video-intelligence/docs 
+[Google Cloud Video Intelligence API](https://cloud.google.com/video-intelligence/docs)
 
-Setup
--------------------------------------------------------------------------------
+## Setup
 
 
-Authentication
-++++++++++++++
+
+### Authentication
+
 
 Authentication is typically done through `Application Default Credentials`_,
 which means you do not have to change the code to authenticate as long as
 your environment has credentials. You have a few options for setting up
 authentication:
 
-#. When running locally, use the `Google Cloud SDK`_
-
-    .. code-block:: bash
+* When running locally, use the [Google Cloud SDK](https://cloud.google.com/sdk/)
 
         gcloud auth application-default login
 
 
-#. When running on App Engine or Compute Engine, credentials are already
-   set-up. However, you may need to configure your Compute Engine instance
-   with `additional scopes`_.
-
-#. You can create a `Service Account key file`_. This file can be used to
+* You can create a [Service Account key file](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#creatinganaccount) This file can be used to
    authenticate to Google Cloud Platform services from any environment. To use
    the file, set the ``GOOGLE_APPLICATION_CREDENTIALS`` environment variable to
    the path to the key file, for example:
 
-    .. code-block:: bash
-
         export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service_account.json
 
-.. _Application Default Credentials: https://cloud.google.com/docs/authentication#getting_credentials_for_server-centric_flow
-.. _additional scopes: https://cloud.google.com/compute/docs/authentication#using
-.. _Service Account key file: https://developers.google.com/identity/protocols/OAuth2ServiceAccount#creatinganaccount
 
 
-Samples
--------------------------------------------------------------------------------
-
-labels
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+### Samples
 
 
+* Labels Sample
 
-To run this sample:
+    To run this sample:
 
-.. code-block:: bash
 
-    $ python labels.py
+    $ python adgence_labels.py
 
-    usage: labels.py [-h] path
+    usage: adgence_labels.py [-h] path
     
     This application demonstrates how to perform basic operations with the
     Google Cloud Video Intelligence API.

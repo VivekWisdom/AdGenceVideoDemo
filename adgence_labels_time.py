@@ -34,7 +34,7 @@ from google.cloud.gapic.videointelligence.v1beta1 import (
 # [END imports]
 
 
-def analyze_labels(path):
+def analyze_labels(path, scanned_time, duration):
     """ Detects labels given a GCS path. """
     # [START construct_request]
     video_client = (video_intelligence_service_client.
@@ -57,15 +57,17 @@ def analyze_labels(path):
     results = operation.result().annotation_results[0]
 
     for label in results.label_annotations:
-        print('Label description: {}'.format(label.description))
-        print('Locations:')
 
         for l, location in enumerate(label.locations):
-                
+            if(location.segment.start_time_offset <= int(scanned_time) and location.segment.end_time_offset > (int(scanned_time) + int(duration))):
+                print('Label description: {}'.format(label.description))
+                print('Locations:')
                 print('\t{}: {} to {}'.format(
                     l,
                     location.segment.start_time_offset,
                     location.segment.end_time_offset))
+            else:
+                continue
     # [END parse_response]
 
 
@@ -75,8 +77,10 @@ if __name__ == '__main__':
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('path', help='GCS file path for label detection.')
+    parser.add_argument('scanned_time', help='Starting time sent from scanned Video')
+    parser.add_argument('duration', help='Duration for with to look for ads')
     args = parser.parse_args()
 
-    analyze_labels(args.path)
+    analyze_labels(args.path, args.scanned_time, args.duration)
     # [END running_app]
 # [END full_tutorial]

@@ -1,0 +1,53 @@
+C:\Users\VIVTRIPATHI\Desktop\Projects\AdGenceVideoDemo>python adgence_labels_time.py gs://adgence-gs/OOTYLake.mp4 22345678 10000
+
+Processing video for label annotations:
+..
+Finished processing.
+Label description: Amusement park
+Locations:
+        3: 17076320 to 36122032
+Label description: Backyard
+Locations:
+        0: 17076320 to 36122032
+Label description: Flora
+Locations:
+        0: 17076320 to 36122032
+Label description: Grass
+Locations:
+        0: 17076320 to 36122032
+Label description: Landscaping
+Locations:
+        0: 17076320 to 36122032
+Label description: Lawn
+Locations:
+        0: 17076320 to 36122032
+Label description: Leisure
+Locations:
+        2: 17076320 to 36122032
+Label description: Nature
+Locations:
+        0: 17076320 to 36122032
+Label description: Outdoor recreation
+Locations:
+        0: 17076320 to 36122032
+Label description: Park
+Locations:
+        2: 17076320 to 36122032
+Label description: Plant
+Locations:
+        1: 17076320 to 36122032
+Label description: Recreation
+Locations:
+        2: 17076320 to 36122032
+Label description: Tourism
+Locations:
+        3: 17076320 to 36122032
+Label description: Tree
+Locations:
+        1: 17076320 to 36122032
+Label description: Woody plant
+Locations:
+        0: 17076320 to 36122032
+Label description: Yard
+Locations:
+        0: 17076320 to 36122032

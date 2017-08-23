@@ -18,8 +18,8 @@ def process_img(img_rgb, template, count):
 
 
 def main():
-    vidcap = cv2.VideoCapture('My_Video.mp4')
-    template = cv2.imread('small_icon_I_am_looking_for.png',0)  # open template only once
+    vidcap = cv2.VideoCapture('test.mp4')
+    template = cv2.imread('test.jpg',0)  # open template only once
     count = 0
     while True:
       success,image = vidcap.read()

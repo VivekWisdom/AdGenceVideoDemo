@@ -59,7 +59,7 @@ def analyze_labels(path, scanned_time, duration):
     for label in results.label_annotations:
 
         for l, location in enumerate(label.locations):
-            if(location.segment.start_time_offset <= int(scanned_time) and location.segment.end_time_offset > (int(scanned_time) + int(duration))):
+            if(location.segment.start_time_offset <= int(scanned_time) and location.segment.end_time_offset >= (int(scanned_time) + int(duration))):
                 print('Label description: {}'.format(label.description))
                 print('Locations:')
                 print('\t{}: {} to {}'.format(

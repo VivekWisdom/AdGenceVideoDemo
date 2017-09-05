@@ -11,11 +11,11 @@ def process_img(img_rgb, template, count):
     loc = np.where( res >= threshold)
     for pt in zip(*loc[::-1]):
         #print('Hee')
-        cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (255,255,255), 2)
+        cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (255,0,255), 2)
 
     # This will write different res.png for each frame. Change this as you require
     path='C:/Users/VIVTRIPATHI/Desktop/Projects/AdGenceVideoDemo/outputimages/'
-    cv2.imwrite(str(path)+'res{0}.png'.format(count),img_rgb)   
+    cv2.imwrite(str(path)+'res{0}.jpg'.format(count),img_rgb)   
 
 
 def main():

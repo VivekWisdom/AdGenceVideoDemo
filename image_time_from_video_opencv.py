@@ -22,7 +22,7 @@ def main():
     vidcap = cv2.VideoCapture('test1.mp4')
     template = cv2.imread('test1.jpg',0)  # open template only once
     count = 0
-    print('Number of Frames: ', int(vidcap.get(cv2.CAP_PROP_FRAME_COUNT )))
+    print('Number of Frames: ', int(vidcap.get(cv2.CAP_PROP_FRAME_COUNT)))
     while True:
       success,image = vidcap.read()
       if not success: break         # loop and a half construct is useful

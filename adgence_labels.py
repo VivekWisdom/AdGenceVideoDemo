@@ -27,6 +27,7 @@ Usage Example:
 import argparse
 import sys
 import time
+import json
 
 from google.cloud.gapic.videointelligence.v1beta1 import enums
 from google.cloud.gapic.videointelligence.v1beta1 import (
@@ -54,18 +55,29 @@ def analyze_labels(path):
     # [END check_operation]
 
     # [START parse_response]
-    results = operation.result().annotation_results[0]
-
+    results = operation.result().annotation_results[0]    
+    labels = []
     for label in results.label_annotations:
+        label_sample = {
+            "description" : label.description,
+            "locations" : {}
+        }
         print('Label description: {}'.format(label.description))
-        print('Locations:')
-
         for l, location in enumerate(label.locations):
-                
+                label_sample['locations'][l] = [
+                    location.segment.start_time_offset, 
+                    location.segment.end_time_offset
+                    ]
                 print('\t{}: {} to {}'.format(
                     l,
                     location.segment.start_time_offset,
                     location.segment.end_time_offset))
+
+        labels.append(label_sample)
+    final_output = {
+        "labels":labels
+    }
+    json.dump(final_output, open('adgence_labels_output.json', 'w'))
     # [END parse_response]
 
 
